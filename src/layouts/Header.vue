@@ -1,7 +1,7 @@
 <script>
 import { ref } from "vue";
-import NavItem from "./NavItem.vue";
-import SocialItem from "./SocialItem.vue";
+import NavItem from "../components/NavItem.vue";
+import SocialItem from "../components/SocialItem.vue";
 
 // defineProps({
 //   navList: Array,

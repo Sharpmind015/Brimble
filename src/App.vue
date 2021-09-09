@@ -1,6 +1,6 @@
 <script
 >
-import Header from "./components/Header.vue";
+import Header from "./layouts/Header.vue";
 
 export default {
   name: 'App',
