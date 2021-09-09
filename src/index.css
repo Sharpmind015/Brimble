@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .header {
+    @apply px-10 pt-6 sm:pt-8 md:pt-9 lg:pt-14  sm:px-12 md:px-14 lg:px-32 flex justify-between items-center;
+  }
+}

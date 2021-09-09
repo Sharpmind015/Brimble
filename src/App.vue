@@ -1,10 +1,25 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "./components/HelloWorld.vue";
+<script
+>
+import Header from "./components/Header.vue";
+
+export default {
+  name: 'App',
+  components: {
+    Header
+  },
+  data() {
+    return {
+      menu: [
+        'Home', 'Pricing', 'About', 'Framework'
+      ]
+    }
+  }
+}
 </script>
 
 <template>
-  <h1>Init</h1>
+  <div class="main">
+    <Header/>
+  </div>
 </template>
 
