@@ -1,11 +1,13 @@
 <script
 >
 import Header from "./layouts/Header.vue";
+import Hero from "./layouts/Hero.vue";
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Hero
   },
   data() {
     return {
@@ -20,6 +22,7 @@ export default {
 <template>
   <div class="main">
     <Header/>
+    <Hero/>
   </div>
 </template>
 
