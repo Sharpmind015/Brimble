@@ -13,6 +13,7 @@ export default {
 <template>
   <section class="hero">
     <Heading />
+    <p class="info">Be the first to know when BRIMBLE launches</p> 
   </section>
 </template>
 
