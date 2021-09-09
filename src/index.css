@@ -4,17 +4,15 @@
   body {
     font-family: "Montserrat", sans-serif;
   }
+  .main {
+    @apply px-6 xl:px-32;
+  }
 }
 
 @tailwind components;
-@tailwind utilities;
-
 @layer components {
   .header {
-    @apply pt-6 md:pt-8 lg:pt-10 px-6 xl:px-32 flex justify-between items-center;
-  }
-  .btw-center {
-    @apply justify-between items-center;
+    @apply pt-6 md:pt-8 lg:pt-10 flex justify-between items-center;
   }
   .btn,
   .link {
@@ -27,10 +25,18 @@
   .btn {
     @apply font-bold text-white px-3 py-2 bg-black rounded-lg;
   }
+  .hero {
+    @apply mt-24 md:mt-32;
+  }
+  .heading {
+    @apply font-extrabold text-center text-black text-4xl md:text-6xl lg:text-7xl uppercase;
+    line-height: 100%;
+  }
 }
 
-/* @media and screen(max-width: 896px) {
-  .nav-desktop {
-    display: none;
+@tailwind utilities;
+@layer utilities {
+  .btw-center {
+    @apply justify-between items-center;
   }
-} */
+}

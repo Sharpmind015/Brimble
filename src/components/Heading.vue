@@ -7,7 +7,7 @@ export default {
 
 <template>
   <h1 class="heading">
-    Shipping modern web applications at ease
+    Shipping <br/> modern <br/> web applications <br/> at ease
   </h1>
 </template>
 
