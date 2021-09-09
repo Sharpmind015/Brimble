@@ -1,9 +1,36 @@
 @tailwind base;
+
+@layer base {
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
   .header {
-    @apply px-10 pt-6 sm:pt-8 md:pt-9 lg:pt-14  sm:px-12 md:px-14 lg:px-32 flex justify-between items-center;
+    @apply pt-6 md:pt-8 lg:pt-10 px-6 xl:px-32 flex justify-between items-center;
+  }
+  .btw-center {
+    @apply justify-between items-center;
+  }
+  .btn,
+  .link {
+    @apply text-lg lg:text-xl leading-7;
+  }
+  .link {
+    @apply font-normal;
+    color: #bdbdbd;
+  }
+  .btn {
+    @apply font-bold text-white px-3 py-2 bg-black rounded-lg;
   }
 }
+
+/* @media and screen(max-width: 896px) {
+  .nav-desktop {
+    display: none;
+  }
+} */
