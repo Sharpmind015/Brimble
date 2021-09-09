@@ -37,11 +37,35 @@
     line-height: 100%;
     color: #bdbdbd;
   }
+  .form {
+    @apply mt-11 flex justify-center flex-wrap;
+  }
+  .input-mail {
+    @apply rounded-xl py-4 pl-6 pr-10 sm:mr-6 mb-4;
+    background-color: #f2f2f2;
+    width: 428px;
+    max-width: 100%;
+  }
+  .input-mail::placeholder {
+    @apply text-base font-normal;
+    color: #bdbdbd;
+  }
+  .form-btn {
+    @apply font-bold text-white px-3 py-1 bg-black rounded-lg text-lg md:text-xl mb-4;
+    font-family: Roboto;
+  }
 }
 
 @tailwind utilities;
 @layer utilities {
   .btw-center {
     @apply justify-between items-center;
+  }
+  .visuallyHidden {
+    @apply absolute overflow-hidden;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
   }
 }
