@@ -19,11 +19,15 @@
     @apply pt-6 md:pt-8 lg:pt-10 flex justify-between items-center relative;
   }
   .nav-mobile {
-    @apply w-full min-h-screen fixed top-0 left-0 bg-white block md:hidden;
+    @apply w-full min-h-screen fixed -top-full left-0 bg-white block md:hidden;
     z-index: 1000;
   }
+  .nav-bg {
+    @apply w-full min-h-screen fixed -top-full left-0 bg-black block md:hidden;
+    z-index: 999;
+  }
   .menu-mobile {
-    @apply flex justify-around items-center min-h-screen w-full flex-col;
+    @apply flex justify-around items-center min-h-screen w-full flex-col absolute;
   }
   .menu-btn {
     @apply fixed block md:hidden;
@@ -33,17 +37,15 @@
     height: 24px;
     z-index: 1001;
   }
-  .menu-btn:before,
-  .menu-btn:after {
-    @apply absolute left-0 bg-black;
-    content: "";
+  .line {
+    @apply absolute left-0 bg-black inline-block;
     width: 100%;
     height: 2px;
   }
-  .menu-btn:before {
+  .line-1 {
     @apply top-0;
   }
-  .menu-btn:after {
+  .line-2 {
     @apply bottom-0;
   }
   .btn,
