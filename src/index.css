@@ -9,7 +9,7 @@
     font-family: "Montserrat", sans-serif;
   }
   .main {
-    @apply px-6 xl:px-32;
+    @apply px-6 xl:px-32 mb-10;
   }
 }
 
@@ -133,6 +133,20 @@
   }
   .dots-down {
     bottom: -12.59px;
+  }
+  .toggle-switch {
+    @apply mt-16 block ml-auto mr-10 relative pl-5 pr-14 py-5 font-normal text-black;
+    height: 59px;
+    background-color: #e5e5e5;
+    border: 1px solid #efefe2;
+    border-radius: 45px;
+  }
+  .ellipse {
+    @apply absolute top-0 right-0 bg-white flex justify-center items-center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100%;
+    width: 53px;
+    height: 53px;
   }
 }
 
