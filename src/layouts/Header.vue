@@ -36,17 +36,18 @@ export default {
       socialLinks: [
         {
           name: 'Github',
-          link: '/src/assets/github.png',
+          link: '/src/assets/github',
           label: 'View brimble github repo'
         },
         {
           name: 'Twitter',
-          link: '/src/assets/twitter.png',
+          link: '/src/assets/twitter',
           label: 'View brimble twitter profile'
         }
       ]
     }
   },
+  props: ['toggle'],
   mounted() {
     window.tl = gsap.timeline({paused: true});
     tl.to('.line-2', {x: '-11px',y: '-15px',rotate: 45, duration: 1, ease: "expo.out"})
@@ -65,7 +66,7 @@ export default {
 
 <template>
   <header class="header">
-    <img class=" w-24 " src="../assets/Brimble.png" alt="Bimble logo">
+    <img class=" w-24 " :src="`/src/assets/brimble-${toggle}.svg`" alt="Bimble logo">
     <button v-on:click="menuAnim" aria-label="Click to open main menu" class="menu-btn">
       <span class="line line-1"></span>
       <span class="line line-2"></span>
@@ -75,7 +76,7 @@ export default {
       <NavItem :key="index" :item="item" v-for="(item, index) in items" />
     </ul>
     <ul class="flex btw-center md:space-x-8 lg:space-x-20" role="list">
-      <SocialItem :key="index" :item="link" v-for="(link, index) in socialLinks"></SocialItem>
+      <SocialItem :toggle="toggle" :key="index" :item="link" v-for="(link, index) in socialLinks"></SocialItem>
     </ul>
     </nav>
     <nav class="nav-mobile">
