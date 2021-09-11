@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
   body {
     font-family: "Montserrat", sans-serif;
   }
@@ -30,7 +34,7 @@
     min-height: 100vh;
   }
   .heading {
-    @apply font-extrabold text-center text-black text-4xl md:text-6xl lg:text-7xl uppercase;
+    @apply font-extrabold text-center text-black text-4xl md:text-6xl lg:text-7xl uppercase relative;
     line-height: 100%;
   }
   .info {
@@ -85,6 +89,17 @@
   .javascript {
     top: -0.015%;
     right: 0;
+  }
+  .dots-up,
+  .dots-down {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .dots-up {
+    top: -12.59px;
+  }
+  .dots-down {
+    bottom: -12.59px;
   }
 }
 
