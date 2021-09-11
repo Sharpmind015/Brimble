@@ -3,9 +3,6 @@ import { ref } from "vue";
 import NavItem from "../components/NavItem.vue";
 import SocialItem from "../components/SocialItem.vue";
 
-// defineProps({
-//   navList: Array,
-// });
 export default {
   name: 'Home',
   components: {

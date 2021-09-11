@@ -26,7 +26,8 @@
     @apply font-bold text-white px-3 py-2 bg-black rounded-lg;
   }
   .hero {
-    @apply mt-24 md:mt-32;
+    @apply mt-24 md:mt-32 relative;
+    min-height: 100vh;
   }
   .heading {
     @apply font-extrabold text-center text-black text-4xl md:text-6xl lg:text-7xl uppercase;
@@ -53,6 +54,37 @@
   .form-btn {
     @apply font-bold text-white px-3 py-1 bg-black rounded-lg text-lg md:text-xl mb-4;
     font-family: Roboto;
+  }
+  .vue {
+    top: 0;
+  }
+  .ember {
+    top: 30.2%;
+    left: -2.09%;
+  }
+  .react {
+    left: -0.0036%;
+    bottom: 20.2%;
+  }
+  .nuxt {
+    left: 25.5%;
+    bottom: 5%;
+  }
+  .svelte {
+    right: 25.5%;
+    bottom: 4.9%;
+  }
+  .angular {
+    right: -0.0036%;
+    bottom: 20.2%;
+  }
+  .next {
+    top: 30.2%;
+    right: -2.09%;
+  }
+  .javascript {
+    top: -0.015%;
+    right: 0;
   }
 }
 
