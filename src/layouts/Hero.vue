@@ -1,5 +1,6 @@
 <script>
-import Heading from "../components/Heading.vue";
+import Heading from "../components/Heading.vue"
+import {gsap} from 'gsap'
 
 export default {
   name: "Hero",
@@ -41,9 +42,12 @@ export default {
           name: "javascript",
           src: "/src/assets/javascript.png",
         },
-      ],
+      ]
     };
   },
+  mounted() {
+    gsap.fromTo(`.tool-anim`, {scale: 0, rotate: 260}, {scale: 1, rotate: 0, stagger: 0.2})
+  }
 };
 </script>
 
@@ -51,7 +55,7 @@ export default {
   <section class="hero">
     <div class="tools">
       <img
-        :class="`absolute ${tool.name} hidden xl:block`"
+        :class="`absolute ${tool.name} hidden xl:block tool-anim`"
         :src="tool.src"
         alt=""
         :key="index"
