@@ -4,7 +4,9 @@ import {gsap} from 'gsap'
 export default {
   name: 'Heading',
   mounted() {
-    gsap.timeline().fromTo(`.dots-up circle`, {scale: 0}, {scale: 1, stagger: 0.02, duration: 1.2, delay: 1.2, ease: "Bounce.in"})
+    gsap.timeline()
+    .from('.heading', {opacity: 0, duration: 0.7, ease: 'Expo.out'})
+    .fromTo(`.dots-up circle`, {scale: 0}, {scale: 1, stagger: 0.02, duration: 1.2, delay: 1.2, ease: "Bounce.in"})
     .fromTo(`.dots-down circle`, {scale: 0}, {scale: 1, stagger: 0.02, duration: 1.2, ease: "Bounce.in"})
   },
   props: ['toggle']
