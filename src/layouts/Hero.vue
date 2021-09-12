@@ -28,7 +28,7 @@ export default {
         },
         {
           name: "gatsby",
-          src: "/src/assets/nuxt.png",
+          src: "/src/assets/gatsby.png",
         },
         {
           name: "svelte",

@@ -69,7 +69,7 @@
   .heading {
     @apply font-extrabold text-center text-4xl md:text-6xl lg:text-7xl uppercase relative;
     line-height: 100%;
-    background: linear-gradient(to left, #87c7df, #648896);
+    background: linear-gradient(180deg, #f83b3b 0%, #1465df 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -95,16 +95,19 @@
     @apply font-bold text-white bg-black px-3 py-1 rounded-lg text-lg md:text-xl mb-4 cursor-pointer;
     font-family: Roboto;
   }
+  html.dark .form-btn {
+    background-color: #3366cc;
+  }
   .vue {
     top: 0;
   }
   .ember {
-    top: 20.2%;
+    top: 22.2%;
     left: -2.09%;
   }
   .react {
     left: -0.0036%;
-    bottom: 48.2%;
+    bottom: 40.2%;
   }
   .nuxt {
     left: 25.5%;
@@ -120,10 +123,10 @@
   }
   .angular {
     right: -0.0036%;
-    bottom: 48.2%;
+    bottom: 40.2%;
   }
   .next {
-    top: 20.2%;
+    top: 22.2%;
     right: -2.09%;
   }
   .javascript {
@@ -142,7 +145,7 @@
     bottom: -12.59px;
   }
   .toggle-switch {
-    @apply mt-3 xl:mt-10 block ml-auto mr-2 relative py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
+    @apply mt-6 xl:mt-10 block ml-auto mr-2 relative py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
     width: 172.16px;
     height: 59px;
     background-color: #e5e5e5;
