@@ -49,7 +49,6 @@ export default {
   },
   props: ['toggle'],
   mounted() {
-    gsap.from('.header', {y: '-100px', duration: 0.6, ease: 'Power.out'})
     window.tl = gsap.timeline({paused: true});
     tl.to('.line-2', {x: '-11px',y: '-15px',rotate: 45, duration: 1, ease: "expo.out"})
     .to('.line-1', {x: '-12px',y: '7px',rotate: -45, duration: 1, ease: "expo.out"}, "-=1")
