@@ -121,15 +121,15 @@
   }
   .nuxt {
     left: 25.5%;
-    bottom: 12%;
+    bottom: 10%;
   }
   .gatsby {
     left: 47%;
-    bottom: 9.9%;
+    bottom: 10.9%;
   }
   .svelte {
     right: 25.5%;
-    bottom: 12.9%;
+    bottom: 9.9%;
   }
   .angular {
     right: -0.0036%;

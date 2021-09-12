@@ -65,8 +65,8 @@ export default {
     modalTl
     .to('.modal', {top: '50%', duration: 1, ease: 'Expo.in'})
     .to('.modal-status-line', {width: '125px',stagger: 0.2, ease: 'Expo.in'})
-    .to('.rect-1', {width: '4.83068px', ease: 'Expo.out'})
-    .to('.rect-2', {width: '4.72217px', ease: 'Expo.out'})
+    .to('.rect-1', {height: '24.2795px', ease: 'Expo.out'})
+    .to('.rect-2', {height: '58.0323px', ease: 'Expo.out'})
     modalTl.reverse() 
   },
   props: ['isToggle'],
