@@ -1,11 +1,13 @@
 <script>
 import Heading from "../components/Heading.vue"
+import Modal from "../components/Modal.vue"
 import {gsap} from 'gsap'
 
 export default {
   name: "Hero",
   components: {
     Heading,
+    Modal
   },
   data() {
     return {
@@ -90,5 +92,7 @@ export default {
         <img :src="`/src/assets/${isToggle}.png`" alt="">
       </div>  
     </button>
+    <Modal/>
+    <div class="overlay"></div> 
   </section>
 </template>
