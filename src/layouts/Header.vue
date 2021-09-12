@@ -86,6 +86,9 @@ export default {
     <ul class="menu-mobile" role="list">
       <NavItem :mobile="true" :key="index" :item="item" v-for="(item, index) in items" />
     </ul>
+    <ul class="socials-mobile">
+      <SocialItem :toggle="toggle" :key="index" :item="link" v-for="(link, index) in socialLinks"></SocialItem>
+    </ul>
     </nav>
     <div class="nav-bg"></div>
   </header>

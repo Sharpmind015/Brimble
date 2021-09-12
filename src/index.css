@@ -19,7 +19,7 @@
     @apply pt-6 md:pt-8 lg:pt-10 flex justify-between items-center relative;
   }
   .nav-mobile {
-    @apply w-full min-h-screen fixed -top-full left-0 bg-white dark:bg-black block md:hidden;
+    @apply w-full min-h-screen fixed -top-full left-0 bg-white dark:bg-black block md:hidden overflow-y-scroll;
     z-index: 1000;
   }
   .nav-bg {
@@ -27,7 +27,17 @@
     z-index: 999;
   }
   .menu-mobile {
-    @apply flex justify-around items-center min-h-screen w-full flex-col absolute;
+    @apply flex justify-around items-center min-h-screen w-full flex-col absolute pb-14;
+  }
+  .socials-mobile {
+    @apply flex justify-around items-center space-x-20 absolute left-1/2;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+  .socials-mobile li {
+    @apply w-8;
+  }
+  .menu-mobile .menu-mobile .social {
   }
   .menu-btn {
     @apply fixed block md:hidden;
