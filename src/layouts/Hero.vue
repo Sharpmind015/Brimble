@@ -48,14 +48,34 @@ export default {
           name: "javascript",
           src: "/src/assets/javascript.png",
         },
-      ]
+      ],
+      showModal: false
     };
   },
   emits: ['toggle'],
   mounted() {
     gsap.fromTo(`.tool-anim`, {scale: 0, rotate: 260}, {scale: 1, rotate: 0, stagger: 0.2, ease: "Bounce.out"})
+    window.modalTl = gsap.timeline({pause: true});
+    modalTl
+    .to('.modal', {top: '50%', duration: 1, ease: 'Expo.in'})
+    .to('.modal-status-line', {width: '125px',stagger: 0.2, ease: 'Expo.in'})
+    .to('.rect-1', {width: '4.83068px', ease: 'Expo.out'})
+    .to('.rect-2', {width: '4.72217px', ease: 'Expo.out'})
+    modalTl.reverse() 
   },
-  props: ['isToggle']
+  props: ['isToggle'],
+  methods: {
+    handleSubmit() {
+      if(!this.showModal) {
+        modalTl.play();
+        this.showModal = !this.showModal;
+      }
+    },
+    closeModal() {
+        modalTl.reverse();
+        this.showModal = !this.showModal;
+    }
+  }
 };
 </script>
 
@@ -72,11 +92,12 @@ export default {
     </div>
     <Heading :toggle="isToggle" />
     <p class="info">Be the first to know when BRIMBLE launches</p>
-    <form class="form">
+    <form @submit.prevent="handleSubmit" class="form">
       <label class="visuallyHidden" for="waitlist">
         Input your email address
       </label>
       <input
+        required
         placeholder="email address"
         class="input-mail"
         type="email"
@@ -92,7 +113,7 @@ export default {
         <img :src="`/src/assets/${isToggle}.png`" alt="">
       </div>  
     </button>
-    <Modal/>
-    <div class="overlay"></div> 
+    <Modal @close="closeModal" />
+    <div @click="closeModal" v-if="showModal" class="overlay"></div> 
   </section>
 </template>
