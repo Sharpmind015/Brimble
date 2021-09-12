@@ -49,7 +49,13 @@ export default {
           src: "/src/assets/javascript.png",
         },
       ],
-      showModal: false
+      showModal: false,
+      response: {
+        status: '',
+        data: {
+          number: ''
+        }
+      }
     };
   },
   emits: ['toggle'],
@@ -66,6 +72,14 @@ export default {
   props: ['isToggle'],
   methods: {
     handleSubmit() {
+      //API test :)
+      this.response = {
+        status: 'Yay, we did it!!',
+        data: {
+          number: 666,
+        }
+      }
+      //response ? 'Show animation' : 'return or error modal, whatever floats your boat :)' 
       if(!this.showModal) {
         modalTl.play();
         this.showModal = !this.showModal;
@@ -113,7 +127,7 @@ export default {
         <img :src="`/src/assets/${isToggle}.png`" alt="">
       </div>  
     </button>
-    <Modal @close="closeModal" />
+    <Modal :response="response" @close="closeModal" />
     <div @click="closeModal" v-if="showModal" class="overlay"></div> 
   </section>
 </template>
