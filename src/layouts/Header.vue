@@ -2,12 +2,14 @@
 import { gsap } from "gsap";
 import NavItem from "../components/NavItem.vue";
 import SocialItem from "../components/SocialItem.vue";
+import BrimbleLogo from "../components/BrimbleLogo.vue";
 
 export default {
   name: 'Home',
   components: {
     NavItem,
-    SocialItem
+    SocialItem,
+    BrimbleLogo
   },
   data() {
     return {
@@ -36,12 +38,10 @@ export default {
       socialLinks: [
         {
           name: 'Github',
-          link: '/src/assets/github',
           label: 'View brimble github repo'
         },
         {
           name: 'Twitter',
-          link: '/src/assets/twitter',
           label: 'View brimble twitter profile'
         }
       ]
@@ -67,9 +67,7 @@ export default {
 
 <template>
   <header class="header">
-    <a href="index.html">
-      <img class=" w-24 " :src="`/src/assets/brimble-${toggle}.svg`" alt="Bimble logo">
-    </a>
+    <BrimbleLogo/>
     <button v-on:click="menuAnim" aria-label="Click to open main menu" class="menu-btn">
       <span class="line line-1"></span>
       <span class="line line-2"></span>
@@ -79,7 +77,7 @@ export default {
       <NavItem :mobile="false" :key="index" :item="item" v-for="(item, index) in items" />
     </ul>
     <ul class="flex btw-center md:space-x-8 lg:space-x-20" role="list">
-      <SocialItem :toggle="toggle" :key="index" :item="link" v-for="(link, index) in socialLinks"></SocialItem>
+      <SocialItem :toggle="toggle" :key="index" :item="item" v-for="(item, index) in socialLinks"/>
     </ul>
     </nav>
     <nav class="nav-mobile">
@@ -87,7 +85,7 @@ export default {
       <NavItem :mobile="true" :key="index" :item="item" v-for="(item, index) in items" />
     </ul>
     <ul class="socials-mobile">
-      <SocialItem :toggle="toggle" :key="index" :item="link" v-for="(link, index) in socialLinks"></SocialItem>
+      <SocialItem :toggle="toggle" :key="index" :item="item" v-for="(item, index) in socialLinks"/>
     </ul>
     </nav>
     <div class="nav-bg"></div>

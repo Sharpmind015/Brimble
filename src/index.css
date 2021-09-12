@@ -37,6 +37,12 @@
   .socials-mobile li {
     @apply w-8;
   }
+  html.dark .svg-mode path {
+    fill: #ffffff;
+  }
+  .svg-mode path {
+    fill: #000000;
+  }
   .menu-mobile .menu-mobile .social {
   }
   .menu-btn {
