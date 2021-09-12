@@ -14,39 +14,39 @@ export default {
       tools: [
         {
           name: "vue",
-          src: "/src/assets/vue.png",
+          src: "/src/assets/vue.svg",
         },
         {
           name: "ember",
-          src: "/src/assets/ember.png",
+          src: "/src/assets/ember.svg",
         },
         {
           name: "react",
-          src: "/src/assets/react.png",
+          src: "/src/assets/react.svg",
         },
         {
           name: "nuxt",
-          src: "/src/assets/nuxt.png",
+          src: "/src/assets/nuxt.svg",
         },
         {
           name: "gatsby",
-          src: "/src/assets/gatsby.png",
+          src: "/src/assets/gatsby.svg",
         },
         {
           name: "svelte",
-          src: "/src/assets/svelte.png",
+          src: "/src/assets/svelte.svg",
         },
         {
           name: "angular",
-          src: "/src/assets/angular.png",
+          src: "/src/assets/angular.svg",
         },
         {
           name: "next",
-          src: "/src/assets/next.png",
+          src: "/src/assets/next.svg",
         },
         {
           name: "javascript",
-          src: "/src/assets/javascript.png",
+          src: "/src/assets/javascript.svg",
         },
       ],
       showModal: false,
