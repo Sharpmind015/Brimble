@@ -50,7 +50,7 @@
   }
   .btn,
   .link {
-    @apply text-lg lg:text-xl leading-7;
+    @apply text-lg lg:text-xl leading-7 inline-block;
   }
   .menu-mobile .link {
     @apply text-3xl;
@@ -67,8 +67,11 @@
     min-height: 100vh;
   }
   .heading {
-    @apply font-extrabold text-center text-black dark:text-white text-4xl md:text-6xl lg:text-7xl uppercase relative;
+    @apply font-extrabold text-center text-4xl md:text-6xl lg:text-7xl uppercase relative;
     line-height: 100%;
+    background: linear-gradient(to left, #87c7df, #648896);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .info {
     @apply font-bold text-lg md:text-xl text-center mt-11;
@@ -96,27 +99,31 @@
     top: 0;
   }
   .ember {
-    top: 30.2%;
+    top: 20.2%;
     left: -2.09%;
   }
   .react {
     left: -0.0036%;
-    bottom: 20.2%;
+    bottom: 48.2%;
   }
   .nuxt {
     left: 25.5%;
-    bottom: 5%;
+    bottom: 12%;
+  }
+  .gatsby {
+    left: 47%;
+    bottom: 9.9%;
   }
   .svelte {
     right: 25.5%;
-    bottom: 4.9%;
+    bottom: 12.9%;
   }
   .angular {
     right: -0.0036%;
-    bottom: 20.2%;
+    bottom: 48.2%;
   }
   .next {
-    top: 30.2%;
+    top: 20.2%;
     right: -2.09%;
   }
   .javascript {
@@ -135,7 +142,7 @@
     bottom: -12.59px;
   }
   .toggle-switch {
-    @apply mt-16 block ml-auto mr-10 relative py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
+    @apply mt-3 xl:mt-10 block ml-auto mr-2 relative py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
     width: 172.16px;
     height: 59px;
     background-color: #e5e5e5;

@@ -50,14 +50,7 @@ export default {
 <template>
   <div class="main">
     <Header :toggle="isToggle"/>
-    <Hero/>
-    <button v-on:click="toggle" class="toggle-switch" role="switch">
-      <span class="toggle-mode light-mode">Light mood</span>
-      <span class="toggle-mode dark-mode">Dark mood</span>
-      <div class="ellipse">
-        <img :src="`/src/assets/${isToggle}.png`" alt="">
-      </div>  
-    </button>
+    <Hero @toggle="toggle" :isToggle="isToggle"/>
   </div>
 </template>
 

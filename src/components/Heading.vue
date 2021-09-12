@@ -6,7 +6,8 @@ export default {
   mounted() {
     gsap.timeline().fromTo(`.dots-up circle`, {scale: 0}, {scale: 1, stagger: 0.02, duration: 1.2, delay: 1.2, ease: "Bounce.in"})
     .fromTo(`.dots-down circle`, {scale: 0}, {scale: 1, stagger: 0.02, duration: 1.2, ease: "Bounce.in"})
-  }
+  },
+  props: ['toggle']
 }
 </script>
 

@@ -27,6 +27,10 @@ export default {
           src: "/src/assets/nuxt.png",
         },
         {
+          name: "gatsby",
+          src: "/src/assets/nuxt.png",
+        },
+        {
           name: "svelte",
           src: "/src/assets/svelte.png",
         },
@@ -45,9 +49,11 @@ export default {
       ]
     };
   },
+  emits: ['toggle'],
   mounted() {
     gsap.fromTo(`.tool-anim`, {scale: 0, rotate: 260}, {scale: 1, rotate: 0, stagger: 0.2, ease: "Bounce.out"})
-  }
+  },
+  props: ['isToggle']
 };
 </script>
 
@@ -62,7 +68,7 @@ export default {
         v-for="(tool, index) in tools"
       />
     </div>
-    <Heading />
+    <Heading :toggle="isToggle" />
     <p class="info">Be the first to know when BRIMBLE launches</p>
     <form class="form">
       <label class="visuallyHidden" for="waitlist">
@@ -77,5 +83,12 @@ export default {
       />
       <input class="form-btn" type="submit" value="Join Waitlist" />
     </form>
+    <button v-on:click="$emit('toggle')" class="toggle-switch" role="switch">
+      <span class="toggle-mode light-mode">Light mood</span>
+      <span class="toggle-mode dark-mode">Dark mood</span>
+      <div class="ellipse">
+        <img :src="`/src/assets/${isToggle}.png`" alt="">
+      </div>  
+    </button>
   </section>
 </template>
