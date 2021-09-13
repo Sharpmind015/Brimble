@@ -22,7 +22,7 @@
     font-family: "Montserrat", sans-serif;
   }
   .main {
-    @apply px-4 xl:px-24 pb-2 bg-white dark:bg-black;
+    @apply px-4 xl:px-24 pb-2 bg-white dark:bg-black flex flex-col justify-between;
     min-height: 100vh;
   }
 }
@@ -74,8 +74,8 @@
     @apply fixed block md:hidden;
     top: 24px;
     right: 24px;
-    width: 40px;
-    height: 24px;
+    width: 30px;
+    height: 15px;
     z-index: 1001;
   }
   .line {
@@ -95,7 +95,7 @@
   }
   .menu-mobile .link,
   .menu-mobile .btn {
-    @apply text-3xl;
+    @apply text-xl;
   }
   .menu-mobile .btn {
     @apply px-3 py-2;
@@ -235,7 +235,7 @@
     }
   }
   .toggle-switch {
-    @apply mt-2 xl:mt-8 block ml-auto mr-2 relative py-2 2xl:py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
+    @apply mt-1 xl:mt-8 block ml-auto mr-2 relative py-2 2xl:py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
     font-size: 0.625rem;
     width: 114px;
     height: 42px;

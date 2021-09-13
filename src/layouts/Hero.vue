@@ -64,7 +64,6 @@ export default {
       }
     };
   },
-  emits: ['toggle'],
   mounted() {
     const headingTl = gsap.timeline({repeat: -1, yoyo: true});
     headingTl.from('.heading-gradient', {opacity: 0, duration: 1.6})
@@ -85,8 +84,6 @@ export default {
     gsap.fromTo(`.tool-anim`, {opacity: 0}, {opacity: 1, stagger: 1.2, ease: "Bounce.out", onComplete: function() {
       onCompleteAnim();
     }})
-    // window.modalTl = gsap.timeline({pause: true});
-    // modalTl.reverse() 
   },
   setup() {
     let isOpen = ref(false);
@@ -147,14 +144,6 @@ export default {
       />
       <input class="form-btn" type="submit" value="Join Waitlist" />
     </form>
-    <button v-on:click="$emit('toggle')" class="toggle-switch" role="switch">
-      <span class="toggle-mode light-mode">Light mode</span>
-      <span class="toggle-mode dark-mode">Dark mode</span>
-      <div class="ellipse">
-        <img v-if="isToggle === 'Dark'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511508/Dark_jeazqh.png" alt="">
-        <img v-if="isToggle === 'Light'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511590/Light_bzhsrd.png" alt="">
-      </div>  
-    </button>
   <Dialog class="modal" :open="isOpen"  @close="setIsOpen">
     <DialogOverlay class="overlay" />
 
