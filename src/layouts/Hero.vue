@@ -166,7 +166,7 @@ export default {
       <input class="form-btn" type="submit" value="Join Waitlist" />
     </form>
     <Dialog class="modal" :open="isOpen" @close="setIsOpen">
-      <DialogOverlay class="overlay" />
+      <DialogOverlay/>
 
       <DialogTitle class="visuallyHidden">Status message</DialogTitle>
       <DialogDescription class="visuallyHidden">
