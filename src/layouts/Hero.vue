@@ -14,39 +14,39 @@ export default {
       tools: [
         {
           name: "vue",
-          src: "/src/assets/vue.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631510746/vue_ml7atz.svg",
         },
         {
           name: "ember",
-          src: "/src/assets/ember.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631510817/ember_xjetmd.svg",
         },
         {
           name: "react",
-          src: "/src/assets/react.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631510883/react_knhn9b.svg",
         },
         {
           name: "nuxt",
-          src: "/src/assets/nuxt.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631510913/nuxt_egzrba.svg",
         },
         {
           name: "gatsby",
-          src: "/src/assets/gatsby.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631510941/gatsby_xkzjth.svg",
         },
         {
           name: "svelte",
-          src: "/src/assets/svelte.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631510975/svelte_xwiupt.svg",
         },
         {
           name: "angular",
-          src: "/src/assets/angular.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511025/angular_lkh7fl.svg",
         },
         {
           name: "next",
-          src: "/src/assets/next.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511058/next_vjvp3a.svg",
         },
         {
           name: "javascript",
-          src: "/src/assets/javascript.svg",
+          src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511086/javascript_djuubq.svg",
         },
       ],
       showModal: false,
@@ -124,7 +124,8 @@ export default {
       <span class="toggle-mode light-mode">Light mood</span>
       <span class="toggle-mode dark-mode">Dark mood</span>
       <div class="ellipse">
-        <img :src="`/src/assets/${isToggle}.png`" alt="">
+        <img v-if="isToggle === 'Dark'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511508/Dark_jeazqh.png" alt="">
+        <img v-if="isToggle === 'Light'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511590/Light_bzhsrd.png" alt="">
       </div>  
     </button>
     <Modal :response="response" @close="closeModal" />
