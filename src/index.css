@@ -112,9 +112,14 @@
     @apply mt-12 md:mt-20 relative;
   }
   .heading {
-    @apply font-extrabold text-center md:text-6xl 2xl:text-7xl uppercase relative;
-    font-size: 2.4rem;
+    @apply font-extrabold text-center 2xl:text-7xl uppercase relative;
+    font-size: calc(20px + (45 - 20) * ((100vw - 100px) / (1023 - 100)));
     line-height: 100%;
+  }
+  @screen lg {
+    .heading {
+      font-size: calc(45px + (60 - 45) * ((100vw - 1024px) / (1535 - 1024)));
+    }
   }
   .heading-gradient {
     @apply relative;
@@ -129,13 +134,8 @@
     height: 100%;
     z-index: 4;
   }
-  @screen lg {
-    .heading {
-      font-size: calc(4.45vw + 5px);
-    }
-  }
   .info {
-    @apply font-bold text-sm lg:text-lg 2xl:text-xl text-center mt-6;
+    @apply font-bold text-xs md:text-sm lg:text-base 2xl:text-xl text-center mt-6;
     line-height: 100%;
     color: #bdbdbd;
   }
