@@ -50,7 +50,9 @@ export default {
   props: ['toggle'],
   mounted() {
     window.tl = gsap.timeline({paused: true});
-    tl.to('.line-2', {x: '-11px',y: '-15px',rotate: 45, duration: 1, ease: "expo.out"})
+    tl
+    .to('body, html', {overflowY: 'hidden'})
+    .to('.line-2', {x: '-11px',y: '-15px',rotate: 45, duration: 1, ease: "expo.out"})
     .to('.line-1', {x: '-12px',y: '7px',rotate: -45, duration: 1, ease: "expo.out"}, "-=1")
     .to('.nav-bg', {top: 0, duration: 1, ease: "Power3.out"}, "-=1")
     .to('.nav-mobile', {top: 0, duration: 0.9, ease: "Power3.out"}, '-=0.9')
