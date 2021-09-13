@@ -55,8 +55,8 @@ export default {
       <span class="toggle-mode light-mode">Light mode</span>
       <span class="toggle-mode dark-mode">Dark mode</span>
       <div class="ellipse">
-        <img v-if="isToggle === 'Dark'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511508/Dark_jeazqh.png" alt="">
-        <img v-if="isToggle === 'Light'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511590/Light_bzhsrd.png" alt="">
+        <img v-if="isToggle === 'Dark'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631553656/bi_moon-stars_lvpyxk.svg" alt="">
+        <img v-if="isToggle === 'Light'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631553628/clarity_sun-line_rzlflp.svg" alt="">
       </div>  
     </button>
   </div>

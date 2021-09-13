@@ -235,7 +235,7 @@
     }
   }
   .toggle-switch {
-    @apply mt-1 xl:mt-8 block ml-auto mr-2 relative py-2 2xl:py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
+    @apply mt-1 xl:mt-8 block ml-auto mr-2 relative font-normal text-black dark:text-white bg-white dark:bg-black;
     font-size: 0.625rem;
     width: 117px;
     height: 41px;
