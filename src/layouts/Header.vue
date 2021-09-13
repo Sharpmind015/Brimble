@@ -52,8 +52,8 @@ export default {
     window.tl = gsap.timeline({paused: true});
     tl
     .to('body, html', {overflowY: 'hidden'})
-    .to('.line-2', {x: '-6px',y: '-10px',rotate: 45, duration: 1, ease: "expo.out"})
-    .to('.line-1', {x: '-7px',y: '3px',rotate: -45, duration: 1, ease: "expo.out"}, "-=1")
+    .to('.line-2', {x: '-5px',y: '-7px',rotate: 45, duration: 1, ease: "expo.out"})
+    .to('.line-1', {x: '-4px',y: '4px',rotate: -45, duration: 1, ease: "expo.out"}, "-=1")
     .to('.nav-bg', {top: 0, duration: 1, ease: "Power3.out"}, "-=1")
     .to('.nav-mobile', {top: 0, duration: 0.9, ease: "Power3.out"}, '-=0.9')
     .fromTo('.link-anim',{y: '50px'}, {y: 0,stagger: 0.2, ease: "expo.out"}, "-0.1")

@@ -33,9 +33,9 @@
     @apply pt-6 md:pt-8 lg:pt-10 flex justify-between items-center relative;
   }
   .nav-mobile {
-    @apply w-full min-h-screen fixed -right-4 bg-white dark:bg-black block md:hidden overflow-y-scroll;
+    @apply w-full min-h-screen fixed right-0 bg-white dark:bg-black block md:hidden overflow-y-scroll;
     top: -150%;
-    width: calc(100vw + 16px);
+    width: 100vw;
     z-index: 1000;
   }
   .nav-bg {
@@ -68,20 +68,18 @@
       width: 29px;
     }
   }
-  .menu-mobile .menu-mobile .social {
-  }
   .menu-btn {
     @apply fixed block md:hidden;
     top: 24px;
     right: 24px;
-    width: 30px;
-    height: 15px;
+    width: 22px;
+    height: 12px;
     z-index: 1001;
   }
   .line {
     @apply absolute left-0 bg-black dark:bg-white inline-block;
     width: 100%;
-    height: 2px;
+    height: 1px;
   }
   .line-1 {
     @apply top-0;
@@ -95,7 +93,10 @@
   }
   .menu-mobile .link,
   .menu-mobile .btn {
-    @apply text-xl;
+    @apply text-lg;
+  }
+  .menu-mobile li {
+    @apply mr-0;
   }
   .menu-mobile .btn {
     @apply px-3 py-2;
@@ -108,8 +109,7 @@
     @apply font-bold text-white dark:text-black px-2 py-1 xl:px-3 xl:py-2 bg-black dark:bg-white rounded-lg;
   }
   .hero {
-    @apply mt-12 md:mt-20 relative flex flex-col justify-center;
-    min-height: 75vh;
+    @apply mt-12 md:mt-20 relative;
   }
   .heading {
     @apply font-extrabold text-center md:text-6xl 2xl:text-7xl uppercase relative;
@@ -143,7 +143,7 @@
     @apply mt-5 flex justify-center flex-wrap;
   }
   .input-mail {
-    @apply rounded-xl py-2 2xl:py-4 pl-6 pr-10 sm:mr-6 mb-4 focus:border-black focus-within:border-black;
+    @apply rounded-xl py-3 2xl:py-4 pl-6 pr-10 sm:mr-6 mb-4 focus:border-black focus-within:border-black;
     background-color: #f2f2f2;
     width: 428px;
     max-width: 100%;
@@ -153,7 +153,7 @@
     color: #bdbdbd;
   }
   .form-btn {
-    @apply font-bold text-white bg-black px-3 py-1 2xl:py-2 rounded-lg text-sm lg:text-base 2xl:text-xl mb-4 cursor-pointer;
+    @apply font-bold text-white bg-black px-3 py-2 rounded-lg text-sm lg:text-base 2xl:text-xl mb-4 cursor-pointer;
     font-family: "Roboto", sans-serif;
   }
   html.dark .form-btn {
@@ -163,31 +163,31 @@
     top: 0;
   }
   .ember {
-    top: 25.2%;
+    top: 35.2%;
     left: -0.5%;
   }
   .react {
     left: -0.0036%;
-    bottom: 35.2%;
+    bottom: 15.2%;
   }
   .nuxt {
     left: 35.5%;
-    bottom: 6.4%;
+    bottom: -19.4%;
   }
   .gatsby {
     left: 47%;
-    bottom: 6.6%;
+    bottom: -19.6%;
   }
   .svelte {
     right: 35.5%;
-    bottom: 6.4%;
+    bottom: -19.4%;
   }
   .angular {
     right: -0.0036%;
-    bottom: 35.2%;
+    bottom: 15.2%;
   }
   .next {
-    top: 25.2%;
+    top: 35.2%;
     right: -0.5%;
   }
   .javascript {
@@ -213,13 +213,13 @@
       right: -2.09%;
     }
     .nuxt {
-      bottom: 1.3%;
+      bottom: -22.3%;
     }
     .gatsby {
-      bottom: 1.2%;
+      bottom: -22.2%;
     }
     .svelte {
-      bottom: 1.3%;
+      bottom: -22.3%;
     }
   }
   @screen md {
@@ -237,8 +237,8 @@
   .toggle-switch {
     @apply mt-1 xl:mt-8 block ml-auto mr-2 relative py-2 2xl:py-5 font-normal text-black dark:text-white bg-white dark:bg-black;
     font-size: 0.625rem;
-    width: 114px;
-    height: 42px;
+    width: 117px;
+    height: 41px;
     background-color: #e5e5e5;
     border: 1px solid #efefe2;
     border-radius: 19px;
@@ -247,7 +247,7 @@
     .toggle-switch {
       @apply text-sm;
       width: 159px;
-      height: 59px;
+      height: 57px;
       border-radius: 50px;
     }
   }
@@ -255,8 +255,8 @@
     @apply absolute top-0 right-0 bg-white flex justify-center items-center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 100%;
-    width: 38px;
-    height: 38px;
+    width: 39px;
+    height: 39px;
   }
   .ellipse img {
     width: 20px;
@@ -296,25 +296,43 @@
     }
   }
   .modal {
-    @apply fixed left-1/2 top-1/2 py-12 px-3 md:px-20 text-center;
+    @apply fixed left-1/2 top-1/2 py-4 lg:py-12 px-3 md:px-20 text-center flex flex-col items-center justify-center;
     font-family: "Montserrat Alternates", sans-serif;
     width: 90%;
-    max-width: 819px;
-    min-height: 496px;
+    max-width: 500px;
+    min-height: 290px;
     background-color: #fbfbfb;
     box-shadow: 0px 5px 30px 5px #636363;
-    border-radius: 25px;
+    border-radius: 15px;
     transform: translate(-50%, -50%);
     z-index: 1002;
   }
   .modal-tick {
-    @apply flex items-center justify-center bg-black mx-auto mb-10 rounded-full;
+    @apply flex items-center justify-center bg-black mx-auto mb-3 lg:mb-10 rounded-full;
     background-image: linear-gradient(135deg, #3366cc 0%, #6c9dff 100%);
-    width: 117px;
-    height: 117px;
+    width: 97px;
+    height: 97px;
+  }
+  @screen lg {
+    .modal {
+      min-height: 370px;
+      border-radius: 25px;
+      max-width: 619px;
+    }
+  }
+  @screen xl {
+    .modal-tick {
+      width: 117px;
+      height: 117px;
+    }
+    .modal {
+      min-height: 496px;
+      border-radius: 25px;
+      max-width: 819px;
+    }
   }
   .modal-status {
-    @apply font-black text-3xl text-black inline-block relative mb-12;
+    @apply font-black text-base lg:text-lg xl:text-3xl text-black inline-block relative mb-12;
   }
   .modal-status-line {
     @apply absolute;
@@ -331,10 +349,10 @@
     bottom: -17px;
   }
   .modal-message {
-    @apply font-semibold text-2xl text-black;
+    @apply font-semibold text-sm lg:text-base xl:text-2xl text-black;
   }
   .modal-number {
-    @apply px-2 py-2;
+    @apply px-1 py-1  lg:px-2 lg:py-2;
     background-image: linear-gradient(
       111.97deg,
       #3366cc -0.25%,
@@ -344,8 +362,14 @@
   }
   .modal-cancel {
     @apply absolute;
-    top: 42.7px;
-    right: 37.7px;
+    top: 12.7px;
+    right: 7.7px;
+  }
+  @screen lg {
+    .modal-cancel {
+      top: 42.7px;
+      right: 37.7px;
+    }
   }
   .overlay {
     @apply fixed top-0 left-0 w-screen h-screen;
