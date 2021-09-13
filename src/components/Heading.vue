@@ -4,10 +4,6 @@ import {gsap} from 'gsap'
 export default {
   name: 'Heading',
   mounted() {
-    gsap.timeline()
-    .from('.heading', {opacity: 0, duration: 0.7, ease: 'Expo.out'})
-    .fromTo(`.dots-up circle`, {scale: 0}, {scale: 1, stagger: 0.02, duration: 1.2, delay: 1.2, ease: "Bounce.in"})
-    .fromTo(`.dots-down circle`, {scale: 0}, {scale: 1, stagger: 0.02, duration: 1.2, ease: "Bounce.in"})
   },
   props: ['toggle']
 }
@@ -63,8 +59,12 @@ export default {
 <circle cx="517.819" cy="2.77" r="2.145" fill="#3366CC"/>
 <circle cx="534.979" cy="2.77" r="2.145" fill="#3366CC"/>
 </svg>
-
+  <div class="heading-gradient">
     Shipping <br/> modern <br/> web applications <br/> at ease
+  </div>
+  <div class="heading-color">
+    Shipping <br/> modern <br/> web applications <br/> at ease
+  </div>
 
     <svg class="dots-down absolute" height="5" viewBox="0 0 538 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="3.02085" cy="2.77" r="2.145" fill="#3366CC"/>

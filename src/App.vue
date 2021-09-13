@@ -26,7 +26,7 @@ export default {
         this.isToggle = "Light"
         localStorage.theme = 'Light'
     } else {
-        gsap.to('.ellipse', {x: '-119.16px'})
+        gsap.to('.ellipse', {x: '-200%'})
         document.documentElement.classList.add('dark')
         this.isToggle = "Dark"
         localStorage.theme = 'Dark'
@@ -35,7 +35,7 @@ export default {
   },
   mounted() {
     if (localStorage.theme === 'Dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      gsap.to('.ellipse', {x: '-119.16px'})
+      gsap.to('.ellipse', {x: '-200%'})
       this.isToggle = "Dark"
       document.documentElement.classList.add('dark')
     } else {

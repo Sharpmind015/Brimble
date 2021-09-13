@@ -78,7 +78,7 @@ export default {
     <ul class="flex btw-center " role="list">
       <NavItem :mobile="false" :key="index" :item="item" v-for="(item, index) in items" />
     </ul>
-    <ul class="flex btw-center md:space-x-8 lg:space-x-20" role="list">
+    <ul class="flex btw-center md:space-x-8 lg:space-x-10 xl:space-x-15 2xl:space-x-24" role="list">
       <SocialItem :toggle="toggle" :key="index" :item="item" v-for="(item, index) in socialLinks"/>
     </ul>
     </nav>

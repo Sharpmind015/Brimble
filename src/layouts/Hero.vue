@@ -66,7 +66,25 @@ export default {
   },
   emits: ['toggle'],
   mounted() {
-    gsap.fromTo(`.tool-anim`, {scale: 0, rotate: 260}, {scale: 1, rotate: 0, stagger: 0.2, ease: "Bounce.out"})
+    const headingTl = gsap.timeline({repeat: -1, yoyo: true});
+    headingTl.from('.heading-gradient', {opacity: 0, duration: 1.6})
+    .from('.heading-color', {opacity: 1, duration: 1.6}, "-=1.6");
+    const dotsTl = gsap.timeline({repeat: -1, yoyo: true});
+    dotsTl
+    .fromTo(`.dots-up circle`, {scale: 0}, {scale: 1, stagger: 0.005, duration: 1.2, ease: "Bounce.in"})
+    .fromTo(`.dots-down circle`, {scale: 0}, {scale: 1, stagger: 0.005, duration: 1.2, ease: "Bounce.in"})
+    function onCompleteAnim() {
+      gsap.to(`.nuxt`, {left: '25.5%', delay: 0.2});
+      gsap.to(`.svelte`, {right: '25.5%', delay: 0.2 });
+      headingTl.pause();
+      dotsTl.pause();
+      gsap.set('.heading-gradient', {opacity: 1});
+      gsap.set('.heading-color', {opacity: 0});
+      gsap.set('.dots-up circle, .dots-down circle', {scale: 1});
+    }
+    gsap.fromTo(`.tool-anim`, {opacity: 0}, {opacity: 1, stagger: 1.2, ease: "Bounce.out", onComplete: function() {
+      onCompleteAnim();
+    }})
     // window.modalTl = gsap.timeline({pause: true});
     // modalTl.reverse() 
   },
@@ -93,10 +111,6 @@ export default {
       //response ? 'Show animation' : 'return or error modal, whatever floats your boat :)' 
       if(!this.isOpen) {
         this.setIsOpen(true);
-        gsap.timeline()
-        .to('.modal-status-line', {width: '125px',stagger: 0.2, ease: 'Expo.in'})
-        .to('.rect-1', {height: '24.2795px', ease: 'Expo.out'})
-        .to('.rect-2', {height: '58.0323px', ease: 'Expo.out'})
       }
     },
     closeModal() {
@@ -110,7 +124,7 @@ export default {
   <section class="hero">
     <div class="tools">
       <img
-        :class="`absolute ${tool.name} hidden xl:block tool-anim`"
+        :class="`absolute ${tool.name} hidden md:block tool tool-anim`"
         :src="tool.src"
         alt=""
         :key="index"
@@ -134,15 +148,15 @@ export default {
       <input class="form-btn" type="submit" value="Join Waitlist" />
     </form>
     <button v-on:click="$emit('toggle')" class="toggle-switch" role="switch">
-      <span class="toggle-mode light-mode">Light mood</span>
-      <span class="toggle-mode dark-mode">Dark mood</span>
+      <span class="toggle-mode light-mode">Light mode</span>
+      <span class="toggle-mode dark-mode">Dark mode</span>
       <div class="ellipse">
         <img v-if="isToggle === 'Dark'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511508/Dark_jeazqh.png" alt="">
         <img v-if="isToggle === 'Light'" src="https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511590/Light_bzhsrd.png" alt="">
       </div>  
     </button>
-  <Dialog class="modal" :open="isOpen" @close="setIsOpen">
-    <DialogOverlay />
+  <Dialog class="modal" :open="isOpen"  @close="setIsOpen">
+    <DialogOverlay class="overlay" />
 
     <DialogTitle class="visuallyHidden">Status message</DialogTitle>
     <DialogDescription class="visuallyHidden">
@@ -169,3 +183,50 @@ export default {
   </Dialog>
   </section>
 </template>
+
+
+<style>
+  .modal {
+    animation: modalAnim 0.3s ease-in-out forwards;
+  }
+  .modal-status-line {
+    animation: lineAnim 0.5s ease-in-out forwards;
+  }
+  .modal-status-line-1 {
+    animation-delay: 0.4s;
+  }
+  .modal-status-line-2 {
+    animation-delay: 0.6s;
+  }
+  .rect-1 {
+    animation: rect1Anim 0.5s 0.4s ease-in-out forwards;
+  }
+  .rect-2 {
+    animation: rect2Anim 0.5s 0.4s ease-in-out forwards;
+  }
+  @keyframes modalAnim {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -30px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  @keyframes lineAnim {
+    to {
+      width: 125px;
+    }
+  }
+  @keyframes rect1Anim {
+    to {
+      height: 24.2795px;
+    }
+  }
+  @keyframes rect2Anim {
+    to {
+      height: 58.0323px;
+    }
+  }
+</style>
