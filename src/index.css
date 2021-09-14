@@ -29,15 +29,18 @@
 
 @tailwind components;
 @layer components {
+  /* Everything Header :) */
   .header {
     @apply pt-6 md:pt-8 lg:pt-10 flex justify-between items-center relative;
   }
+  /* styling for smaller screens => 767 & below. Mobilr first :) */
   .nav-mobile {
     @apply w-full min-h-screen fixed right-0 bg-white dark:bg-black block md:hidden overflow-y-scroll;
     top: -150%;
     width: 100vw;
     z-index: 1000;
   }
+  /* extra background behind nav-mobile for aesthetics reason?? */
   .nav-bg {
     @apply w-full min-h-screen fixed left-0 bg-black dark:bg-white block md:hidden;
     top: -150%;
@@ -51,23 +54,35 @@
     bottom: 20px;
     transform: translateX(-50%);
   }
+  /* Be careful, stronger specifity :)  */
+  .menu-mobile .link,
+  .menu-mobile .btn {
+    @apply text-lg;
+  }
+  .menu-mobile .btn {
+    @apply px-3 py-2;
+  }
   .socials-mobile li {
     @apply w-8;
-  }
-  html.dark .svg-mode path {
-    fill: #ffffff;
-  }
-  .svg-mode path {
-    fill: #000000;
   }
   .svg-social {
     width: 20px;
   }
-  @screen xl {
-    .svg-social {
-      width: 29px;
+  /* Header svgs (site, twitter & github logo) */
+  .svg-mode path {
+    fill: #000000;
+  }
+  html.dark .svg-mode path {
+    fill: #ffffff;
+  }
+  /* between 640px & 1535px */
+  @screen sm {
+    .btn,
+    .link {
+      font-size: calc(14px + (18 - 14) * ((100vw - 640px) / (1535 - 640)));
     }
   }
+  /* Hamburger menu */
   .menu-btn {
     @apply fixed block md:hidden;
     top: 24px;
@@ -87,22 +102,19 @@
   .line-2 {
     @apply bottom-0;
   }
+  /* styling for larger screens => 768 & above */
+  .nav-lg {
+    @apply btw-center hidden md:flex;
+  }
+  .menu-lg {
+    @apply flex btw-center space-x-7 lg:space-x-14 2xl:space-x-32;
+  }
+  .socials-lg {
+    @apply hidden md:flex btw-center md:space-x-8 lg:space-x-10 xl:space-x-14 2xl:space-x-24;
+  }
   .btn,
   .link {
     @apply text-sm 2xl:text-xl leading-7 inline-block;
-  }
-  @screen sm {
-    .btn,
-    .link {
-      font-size: calc(14px + (18 - 14) * ((100vw - 640px) / (1535 - 640)));
-    }
-  }
-  .menu-mobile .link,
-  .menu-mobile .btn {
-    @apply text-lg;
-  }
-  .menu-mobile .btn {
-    @apply px-3 py-2;
   }
   .link {
     @apply font-normal;
@@ -111,6 +123,14 @@
   .btn {
     @apply font-bold text-white dark:text-black px-2 py-1 xl:px-3 xl:py-2 bg-black dark:bg-white rounded-lg;
   }
+  /* 1280 & above */
+  @screen xl {
+    .svg-social {
+      width: 29px;
+    }
+  }
+
+  /* Everything Hero */
   .hero {
     @apply mt-12 md:mt-20 relative;
   }
@@ -131,6 +151,7 @@
     -webkit-text-fill-color: transparent;
     z-index: 5;
   }
+  /* Hidden by default, for intro animation */
   .heading-color {
     @apply text-black dark:text-white absolute top-0 left-0 opacity-0;
     width: 100%;
@@ -142,14 +163,29 @@
     line-height: 100%;
     color: #bdbdbd;
   }
+  /* between 640px & 1535px screen */
   @screen sm {
     .info {
       font-size: calc(14px + (18 - 14) * ((100vw - 640px) / (1535 - 640)));
     }
   }
+  /* Dots above and below main heading */
+  .dots-up,
+  .dots-down {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .dots-up {
+    top: -12.59px;
+  }
+  .dots-down {
+    bottom: -12.59px;
+  }
+  /* Everything Form */
   .form {
     @apply mt-5 flex justify-center flex-wrap;
   }
+  /* email input */
   .input-mail {
     @apply rounded-xl py-3 2xl:py-4 pl-6 pr-10 sm:mr-6 mb-4 focus:border-black focus-within:border-black;
     background-color: #f2f2f2;
@@ -168,6 +204,8 @@
   html.dark .form-btn {
     background-color: #3366cc;
   }
+
+  /* Frameworks & Languages => (Tools) logos... */
   .vue {
     top: 0;
     left: 1.5%;
@@ -247,17 +285,7 @@
       top: 40.2%;
     }
   }
-  .dots-up,
-  .dots-down {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .dots-up {
-    top: -12.59px;
-  }
-  .dots-down {
-    bottom: -12.59px;
-  }
+  /* Toggle switch between dark and light mode */
   .toggle-switch {
     @apply mt-1 xl:mt-8 block ml-auto mr-2 relative font-normal text-black dark:text-white bg-white dark:bg-black;
     font-size: 0.625rem;
@@ -319,6 +347,7 @@
       @apply right-5;
     }
   }
+  /* Dialog modal */
   .modal {
     @apply fixed left-1/2 top-1/2 py-4 lg:py-12 px-3 md:px-20 text-center flex flex-col items-center justify-center;
     font-family: "Montserrat Alternates", sans-serif;

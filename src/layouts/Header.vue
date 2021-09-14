@@ -74,12 +74,12 @@ export default {
       <span class="line line-1"></span>
       <span class="line line-2"></span>
     </button>  
-    <nav class="btw-center hidden md:flex ">
-    <ul class="flex btw-center space-x-7 lg:space-x-14 2xl:space-x-32" role="list">
+    <nav class="nav-lg">
+    <ul class="menu-lg" role="list">
       <NavItem :mobile="false" :key="index" :item="item" v-for="(item, index) in items" />
     </ul>
     </nav>
-    <ul class=" hidden md:flex btw-center md:space-x-8 lg:space-x-10 xl:space-x-15 2xl:space-x-24" role="list">
+    <ul class="socials-lg" role="list">
       <SocialItem :toggle="toggle" :key="index" :item="item" v-for="(item, index) in socialLinks"/>
     </ul>
     <nav class="nav-mobile">
