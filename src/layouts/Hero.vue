@@ -1,7 +1,8 @@
 <script>
-import { ref } from "vue";
+import { ref, } from "vue";
 import { gsap } from "gsap";
 import Heading from "../components/Heading.vue";
+import Modal from "../components/Modal.vue";
 import {
   Dialog,
   DialogOverlay,
@@ -12,6 +13,7 @@ import {
 export default {
   name: "Hero",
   components: {
+    Modal,
     Heading,
     Dialog,
     DialogOverlay,
@@ -58,7 +60,6 @@ export default {
           src: "https://res.cloudinary.com/dexg5uy3d/image/upload/v1631511086/javascript_djuubq.svg",
         },
       ],
-      showModal: false,
       response: {
         status: "",
         data: {
@@ -126,14 +127,11 @@ export default {
           number: 666,
         },
       };
-      //response ? 'Show animation' : 'return or error modal, whatever floats your boat :)'
+      //response => works ? 'Open success modal' : 'return or error message, whatever floats your boat :)'
       if (!this.isOpen) {
         this.setIsOpen(true);
       }
-    },
-    closeModal() {
-      this.setIsOpen(true);
-    },
+    }
   },
 };
 </script>
@@ -165,7 +163,8 @@ export default {
       />
       <input class="form-btn" type="submit" value="Join Waitlist" />
     </form>
-    <Dialog class="modal" :open="isOpen" @close="setIsOpen">
+    <Modal :open="open" :setIsOpen="setIsOpen" :response="response" />
+    <!-- <Dialog class="modal" :open="isOpen" @close="setIsOpen">
       <DialogOverlay/>
 
       <DialogTitle class="visuallyHidden">Status message</DialogTitle>
@@ -232,13 +231,13 @@ export default {
           />
         </svg>
       </button>
-    </Dialog>
+    </Dialog> -->
   </section>
 </template>
 
-<style>
+<!-- <style>
 .modal {
-  animation: modalAnim 0.3s ease-in-out forwards;
+  /* animation: modalAnim 0.3s ease-in-out forwards; */
 }
 .modal-status-line {
   animation: lineAnim 0.5s ease-in-out forwards;
@@ -280,4 +279,4 @@ export default {
     height: 58.0323px;
   }
 }
-</style>
+</style> -->
