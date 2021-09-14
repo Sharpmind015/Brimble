@@ -1,6 +1,7 @@
 <script>
 import {
   TransitionRoot,
+  TransitionChild,
   Dialog,
   DialogOverlay,
   DialogTitle,
@@ -11,6 +12,7 @@ export default {
   name: "Modal",
   components: {
     TransitionRoot,
+    TransitionChild,
     Dialog,
     DialogOverlay,
     DialogTitle,
@@ -24,23 +26,25 @@ export default {
 
 <template>
   <TransitionRoot
-    appear
+    appear as="template"
     :show="isOpen"
-    enter="duration-300 ease-out"
-    enter-from="opacity-0"
-    enter-to="opacity-100"
-    leave="duration-200 ease-in"
-    leave-from="opacity-100"
-    leave-to="opacity-0"
   >
-    <Dialog class="modal" :open="isOpen" @close="setIsOpen">
+    <Dialog as="div"  @close="setIsOpen">
       <DialogOverlay/>
 
       <DialogTitle class="visuallyHidden">Status message</DialogTitle>
       <DialogDescription class="visuallyHidden">
         {{ response.status }}
       </DialogDescription>
-
+      <div class="modal">
+      <TransitionChild
+        enter="duration-200 ease-out"
+        enter-from="opacity-0 scale-0"
+        enter-to="opacity-100 scale-100"
+        leave="duration-200 ease-in"
+        leave-from="sopacity-100 scale-100"
+        leave-to="opacity-0 scale-0"
+      >
       <div class="modal-tick">
         <svg
           width="60"
@@ -77,8 +81,10 @@ export default {
         You are now number
         <span class="modal-number">{{ response.data.number }}</span> on the
         waiting list
-      </p>
-      <p class="modal-message">We will keep you updated</p>
+      </p>      
+        <p class="modal-message">We will keep you updated</p>
+      
+      
       <button
         class="modal-cancel"
         aria-label="Click button to close modal"
@@ -100,13 +106,17 @@ export default {
           />
         </svg>
       </button>
+      </TransitionChild>
+      </div>
     </Dialog>
   </TransitionRoot>
 </template>
 
 <style>
+/* Modal Animations */
 .modal {
-  /* animation: modalAnim 0.3s ease-in-out forwards; */
+  /* animate in for modal(To make up for transition root enter animation not working :( ) */
+  animation: modalAnim 0.3s ease-in-out forwards;
 }
 .modal-status-line {
   animation: lineAnim 0.5s ease-in-out forwards;
@@ -126,7 +136,7 @@ export default {
 @keyframes modalAnim {
   from {
     opacity: 0;
-    transform: translate(-50%, -30px);
+    transform: translate(-50%, -10px);
   }
   to {
     opacity: 1;
