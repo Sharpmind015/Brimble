@@ -158,4 +158,16 @@ export default {
     height: 58.0323px;
   }
 }
+@media screen and (max-width: 640px) {
+@keyframes rect1Anim {
+  to {
+    height: 14.2795px;
+  }
+}
+@keyframes rect2Anim {
+  to {
+    height: 38.0323px;
+  }
+}
+}
 </style>

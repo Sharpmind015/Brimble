@@ -31,7 +31,7 @@
 @layer components {
   /* Everything Header :) */
   .header {
-    @apply pt-6 md:pt-8 lg:pt-10 flex justify-between items-center relative;
+    @apply pt-6 md:pt-8 lg:pt-10 3xl:pt-32 flex justify-between items-center relative;
   }
   /* styling for smaller screens => 767 & below. Mobilr first :) */
   .nav-mobile {
@@ -136,7 +136,7 @@
   }
   .heading {
     @apply font-extrabold text-center 2xl:text-7xl uppercase relative;
-    font-size: calc(20px + (45 - 20) * ((100vw - 100px) / (1023 - 100)));
+    font-size: calc(28px + (55 - 28) * ((100vw - 100px) / (1023 - 100)));
     line-height: 100%;
   }
   @screen lg {
@@ -383,8 +383,14 @@
   .modal-tick {
     @apply flex items-center justify-center bg-black mx-auto mb-3 lg:mb-6 2xl:mb-6 rounded-full;
     background-image: linear-gradient(135deg, #3366cc 0%, #6c9dff 100%);
-    width: 97px;
-    height: 97px;
+    width: 57px;
+    height: 57px;
+  }
+  @screen sm {
+    .modal-tick {
+      width: 97px;
+      height: 97px;
+    }
   }
   @screen 2xl {
     .modal-tick {

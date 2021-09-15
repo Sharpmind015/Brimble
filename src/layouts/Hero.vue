@@ -73,11 +73,11 @@ export default {
     const dotsTl = gsap.timeline({ repeat: -1, yoyo: true });
     const logosTl = gsap.timeline({ repeat: -1 });
     gsap.set(".gatsby-anim", { opacity: 0 });
-    gsap.set(".nuxt", { left: "35.5%" });
-    gsap.set(".svelte", { right: "35.5%" });
+    gsap.set(".nuxt", { left: "30.5%" });
+    gsap.set(".svelte", { right: "30.5%" });
     headingTl
-      .from(".heading-gradient", { opacity: 0, duration: 2.2 })
-      .from(".heading-color", { opacity: 1, duration: 2.2 }, "-=2.2");
+      .from(".heading-gradient", { opacity: 0, duration: 2.2, ease: "Power.in" })
+      .from(".heading-color", { opacity: 1, duration: 2.2 , ease: "Power.in" }, "-=2.2");
     dotsTl
       .fromTo(
         `.dots-up circle, .dots-down circle`,
@@ -93,9 +93,10 @@ export default {
         ease: "Bounce.out",
       }
     )
-    .to(`.nuxt`, { left: "25.5%", duration: 1.2})
+    .to(".gatsby-anim", { opacity: 1, duration: 1.8 })
+    .to(`.nuxt`, { left: "25.5%", duration: 1.2}, "-=1.6")
     .to(`.svelte`, { right: "25.5%", duration: 1.2}, "-=1.2")
-    .to(".gatsby-anim", { opacity: 1, duration: 0.8 }, "+=0.2");
+    .to(".tool-anim", { opacity: 0, duration: 0.5 }, "+=0.1");
   },
   setup() {
     let isOpen = ref(false);
@@ -130,7 +131,9 @@ export default {
   <section class="hero">
     <div class="tools">
       <img
-        :class="`absolute ${tool.name} hidden md:block tool ${tool.name === 'gatsby' ? 'gatsby-anim' : 'tool-anim'}`"
+        :class="`absolute ${tool.name} hidden md:block tool ${
+          tool.name === 'gatsby' ? 'gatsby-anim' : 'tool-anim'
+        }`"
         :src="tool.src"
         alt=""
         :key="index"
