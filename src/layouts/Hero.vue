@@ -76,13 +76,13 @@ export default {
     gsap.set(".nuxt", { left: "30.5%" });
     gsap.set(".svelte", { right: "30.5%" });
     headingTl
-      .from(".heading-gradient", { opacity: 0, duration: 2.2, ease: "Power.in" })
-      .from(".heading-color", { opacity: 1, duration: 2.2 , ease: "Power.in" }, "-=2.2");
+      .from(".heading-gradient", { opacity: 0, duration: 3.2, ease: "Power.in" })
+      .from(".heading-color", { opacity: 1, duration: 3.2 , ease: "Power.in" }, "-=2.2");
     dotsTl
       .fromTo(
         `.dots-up circle, .dots-down circle`,
-        { scale: 0 },
-        { scale: 1, duration: 2.2, ease: "Bounce.in" }
+        { opacity: 0 },
+        { opacity: 1, duration: 4.2, ease: "Power.in" }
       );
     logosTl.fromTo(
       `.tool-anim`,

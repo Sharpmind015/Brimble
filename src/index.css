@@ -204,7 +204,7 @@
     color: #bdbdbd;
   }
   .form-btn {
-    @apply font-bold text-white bg-black px-3 py-2 rounded-lg 2xl:text-xl mb-4 cursor-pointer;
+    @apply font-bold text-white bg-black px-3 py-3 rounded-lg 2xl:text-xl mb-4 cursor-pointer;
     font-size: calc(13px + (16 - 13) * ((100vw - 0px) / (1535 - 0)));
     font-family: "Roboto", sans-serif;
   }
