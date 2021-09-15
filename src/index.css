@@ -132,7 +132,7 @@
 
   /* Everything Hero */
   .hero {
-    @apply mt-12 md:mt-20 relative;
+    @apply relative;
   }
   .heading {
     @apply font-extrabold text-center 2xl:text-7xl uppercase relative;
@@ -172,8 +172,15 @@
   /* Dots above and below main heading */
   .dots-up,
   .dots-down {
+    width: 80%;
     left: 50%;
     transform: translateX(-50%);
+  }
+  @screen md {
+    .dots-up,
+    .dots-down {
+      width: unset;
+    }
   }
   .dots-up {
     top: -12.59px;
@@ -212,10 +219,10 @@
   }
   .ember {
     top: 35.2%;
-    left: 0.5%;
+    left: -0.1%;
   }
   .react {
-    left: 1.0036%;
+    left: 1.46%;
     bottom: 15.2%;
   }
   .nuxt {
@@ -224,23 +231,23 @@
   }
   .gatsby {
     left: 47%;
-    bottom: -19.6%;
+    bottom: -25.6%;
   }
   .svelte {
     right: 35.5%;
     bottom: -19.4%;
   }
   .angular {
-    right: 1.0036%;
+    right: 1.46%;
     bottom: 15.2%;
   }
   .next {
     top: 35.2%;
-    right: 0.5%;
+    right: -0.1%;
   }
   .javascript {
     top: -0.015%;
-    right: 1.5%;
+    right: 3.1%;
   }
   @screen md {
     .tool {
@@ -250,11 +257,11 @@
   }
   @screen lg {
     .ember {
-      left: 0.9%;
+      left: -1.1%;
       top: 37.2%;
     }
     .next {
-      right: 0.9%;
+      right: -1.1%;
       top: 37.2%;
     }
     .react {
@@ -267,7 +274,7 @@
       bottom: -22.3%;
     }
     .gatsby {
-      bottom: -22.2%;
+      bottom: -28.2%;
     }
     .svelte {
       bottom: -22.3%;
@@ -352,7 +359,7 @@
     @apply fixed left-1/2 top-1/2 py-4 lg:py-12 px-3 md:px-20 text-center flex flex-col items-center justify-center;
     font-family: "Montserrat Alternates", sans-serif;
     width: 90%;
-    max-width: 400px;
+    max-width: 350px;
     min-height: 290px;
     background-color: #fbfbfb;
     box-shadow: 0px 5px 30px 5px #636363;
@@ -361,14 +368,14 @@
     z-index: 1002;
   }
   .modal-tick {
-    @apply flex items-center justify-center bg-black mx-auto mb-3 lg:mb-6 2xl:mb-10 rounded-full;
+    @apply flex items-center justify-center bg-black mx-auto mb-3 lg:mb-6 2xl:mb-6 rounded-full;
     background-image: linear-gradient(135deg, #3366cc 0%, #6c9dff 100%);
     width: 97px;
     height: 97px;
   }
   @screen lg {
     .modal {
-      max-width: 500px;
+      max-width: 400px;
       min-height: 370px;
       border-radius: 25px;
     }
@@ -379,13 +386,13 @@
       height: 117px;
     }
     .modal {
-      max-width: 819px;
+      max-width: 619px;
       min-height: 496px;
       border-radius: 25px;
     }
   }
   .modal-status {
-    @apply font-black text-base lg:text-lg xl:text-2xl 2xl:text-3xl text-black inline-block relative mb-9 2xl:mb-12;
+    @apply font-black text-base lg:text-lg xl:text-xl 2xl:text-2xl text-black inline-block relative mb-5 2xl:mb-9;
   }
   .modal-status-line {
     @apply absolute;
@@ -402,7 +409,7 @@
     bottom: -17px;
   }
   .modal-message {
-    @apply font-semibold text-sm lg:text-base xl:text-lg 2xl:text-2xl text-black;
+    @apply font-semibold text-sm lg:text-base xl:text-lg 2xl:text-xl text-black;
   }
   .modal-number {
     @apply px-1 py-1  lg:px-2 lg:py-2;

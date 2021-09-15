@@ -76,7 +76,7 @@ export default {
       </h4>
       <p
         v-if="(response.status = 'Yay, we did it!!')"
-        class="modal-message mb-3 xl:mb-5 2xl:mb-9"
+        class="modal-message mb-3"
       >
         You are now number
         <span class="modal-number">{{ response.data.number }}</span> on the

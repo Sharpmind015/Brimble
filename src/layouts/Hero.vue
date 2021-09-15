@@ -70,42 +70,32 @@ export default {
   },
   mounted() {
     const headingTl = gsap.timeline({ repeat: -1, yoyo: true });
-    headingTl
-      .from(".heading-gradient", { opacity: 0, duration: 1.6 })
-      .from(".heading-color", { opacity: 1, duration: 1.6 }, "-=1.6");
     const dotsTl = gsap.timeline({ repeat: -1, yoyo: true });
+    const logosTl = gsap.timeline({ repeat: -1 });
+    gsap.set(".gatsby-anim", { opacity: 0 });
+    gsap.set(".nuxt", { left: "35.5%" });
+    gsap.set(".svelte", { right: "35.5%" });
+    headingTl
+      .from(".heading-gradient", { opacity: 0, duration: 2.2 })
+      .from(".heading-color", { opacity: 1, duration: 2.2 }, "-=2.2");
     dotsTl
       .fromTo(
-        `.dots-up circle`,
+        `.dots-up circle, .dots-down circle`,
         { scale: 0 },
-        { scale: 1, stagger: 0.005, duration: 1.2, ease: "Bounce.in" }
-      )
-      .fromTo(
-        `.dots-down circle`,
-        { scale: 0 },
-        { scale: 1, stagger: 0.005, duration: 1.2, ease: "Bounce.in" }
+        { scale: 1, duration: 2.2, ease: "Bounce.in" }
       );
-    function onCompleteAnim() {
-      gsap.to(`.nuxt`, { left: "25.5%", delay: 0.2 });
-      gsap.to(`.svelte`, { right: "25.5%", delay: 0.2 });
-      headingTl.pause();
-      dotsTl.pause();
-      gsap.set(".heading-gradient", { opacity: 1 });
-      gsap.set(".heading-color", { opacity: 0 });
-      gsap.set(".dots-up circle, .dots-down circle", { scale: 1 });
-    }
-    gsap.fromTo(
+    logosTl.fromTo(
       `.tool-anim`,
       { opacity: 0 },
       {
         opacity: 1,
-        stagger: 1.2,
+        stagger: 2.2,
         ease: "Bounce.out",
-        onComplete: function () {
-          onCompleteAnim();
-        },
       }
-    );
+    )
+    .to(`.nuxt`, { left: "25.5%", duration: 1.2})
+    .to(`.svelte`, { right: "25.5%", duration: 1.2}, "-=1.2")
+    .to(".gatsby-anim", { opacity: 1, duration: 0.8 }, "+=0.2");
   },
   setup() {
     let isOpen = ref(false);
@@ -140,7 +130,7 @@ export default {
   <section class="hero">
     <div class="tools">
       <img
-        :class="`absolute ${tool.name} hidden md:block tool tool-anim`"
+        :class="`absolute ${tool.name} hidden md:block tool ${tool.name === 'gatsby' ? 'gatsby-anim' : 'tool-anim'}`"
         :src="tool.src"
         alt=""
         :key="index"
