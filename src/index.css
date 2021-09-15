@@ -375,7 +375,7 @@
   }
   @screen lg {
     .modal {
-      max-width: 400px;
+      max-width: 500px;
       min-height: 370px;
       border-radius: 25px;
     }
@@ -383,8 +383,8 @@
   .modal-tick {
     @apply flex items-center justify-center bg-black mx-auto mb-3 lg:mb-6 2xl:mb-6 rounded-full;
     background-image: linear-gradient(135deg, #3366cc 0%, #6c9dff 100%);
-    width: 57px;
-    height: 57px;
+    width: 77px;
+    height: 77px;
   }
   @screen sm {
     .modal-tick {
@@ -404,7 +404,7 @@
     }
   }
   .modal-status {
-    @apply font-black text-base lg:text-lg xl:text-xl 2xl:text-2xl text-black inline-block relative mb-5 2xl:mb-9;
+    @apply font-black text-base lg:text-lg xl:text-xl 2xl:text-2xl text-black inline-block relative mb-7 2xl:mb-9;
   }
   .modal-status-line {
     @apply absolute;

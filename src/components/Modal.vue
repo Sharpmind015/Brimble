@@ -76,7 +76,7 @@ export default {
       </h4>
       <p
         v-if="(response.status = 'Yay, we did it!!')"
-        class="modal-message mb-3"
+        class="modal-message mb-1 xl:mb-3"
       >
         You are now number
         <span class="modal-number">{{ response.data.number }}</span> on the
@@ -158,16 +158,24 @@ export default {
     height: 58.0323px;
   }
 }
-@media screen and (max-width: 640px) {
-@keyframes rect1Anim {
+@keyframes lineAnimSM {
   to {
-    height: 14.2795px;
+    width: 45px;
   }
 }
-@keyframes rect2Anim {
+@keyframes lineAnimXL {
   to {
-    height: 38.0323px;
+    width: 95px;
   }
+}
+@media screen and (max-width: 640px) {
+.modal-status-line {
+  animation: lineAnimSM 0.5s ease-in-out forwards;
+}
+}
+@media screen and (max-width: 1535px) {
+.modal-status-line {
+  animation: lineAnimXL 0.5s ease-in-out forwards;
 }
 }
 </style>
